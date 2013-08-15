@@ -1,0 +1,137 @@
+<?php
+/**
+ *===================================*
+ *Don't Delete This Message **Please**
+ *===================================*
+ *name:    foxiran e-mail template
+ *author:  amir christ
+ *email:   info@onenet.ir
+ *test:    everything is done!
+ *version: 2.1
+ *===================================*
+*/
+defined('PHPFOX') or exit('NO DICE!');
+?>
+{if $bHtml}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>foxiran e-mail template</title>
+</head>
+<body style="margin: 0; padding: 0;" dir="rtl">
+<table width="98%" border="0" cellspacing="0" cellpadding="110">
+	<tr>
+		<td align="left" bgcolor="#E2E2E2" width="100%" style="font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;">
+<table cellpadding="10" cellspacing="0" border="0" width="100%" height="80">
+	<tr align="right" valign="top" bgcolor="#333E46">
+<!--=======================================================================================
+ "Site Name" - you can replace other name as you wish with: {param var='core.site_title'}
+========================================================================================-->      
+		<td width="70%"><font color="#FFFFFF" size="4" face="Tahoma, Geneva, sans-serif">{param var='core.site_title'}</font><br/>
+		<div style="padding-top:15px; padding-bottom:1px;">
+                <font color="#FFFFFF" size="2" face="Tahoma, Geneva, sans-serif">
+ایمیل ارسال شده در:</font><br />
+<font color="#4B8FCF" size="2" face="Tahoma, Geneva, sans-serif">
+<?php
+/*========================================= 
+ * Persian TimeZone
+ * Wednesday 31st July 2013 - 20:54:38
+ *========================================*/
+$timezone = "Asia/Tehran";
+if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);
+echo date('l jS F Y - H:i:s');
+?>
+		</font></div>
+		</td>
+	<td width="30%" height="84" align="center" valign="middle">
+<table cellspacing="0" cellpadding="0">
+	<tr>
+		<td style="border: 1px solid #FFFFFF;">
+<table cellspacing="0" cellpadding="0">
+	<tr>
+<!--===================================================
+    Change Site URL with yours - Note: **Important**
+====================================================-->
+		<td style="padding: 5px 15px;background-color: #4B8FCF;border-top: 1px solid #4B8FCF;"><a href="http://your-site.com/" style="color: #FFF;font-size: 13px;font-weight: bold;text-decoration: none;">وارد سایت شوید</a>
+        </td>
+	</tr>
+</table>
+		</td>
+	</tr>
+</table>
+		</td>
+	</tr>
+</table>
+<!--======================================================================================
+     Email { Content } - Note: Don't change or don't remove this part. **Important**
+========================================================================================-->
+<table width="100%" border="0" cellpadding="0" cellspacing="10" bgcolor="#FFFFFF">
+	<tr>
+		<td width="100%" align="right" valign="top" bgcolor="#FFFFFF"><font color="#4B8FCF" size="2" face="Tahoma, Geneva, sans-serif"><div style="margin-bottom: 15px;"><div style="font-weight: bold; margin-bottom: 15px;">{if $bMessageHeader}
+{if isset($sName)}
+{phrase var='core.hello_name' name=$sName}
+{else}
+{phrase var='core.hello'}
+{/if}, <br />
+        <br />
+{/if}
+{$sMessage} <br /><br/>
+        <hr align="center" width="90%" color="#333E46" />
+                          </div></font>
+		</td>
+	</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="10" bgcolor="#FFFFFF">
+	<tr align="right" valign="top" bgcolor="#FFFFFF" cellspacing="0">
+		<td width="80%">
+<!--================================================================
+    Change Site URL and site-name with yours - Note: **Important**
+=================================================================-->
+دوستان خود را به <a href="http://site-name.com/invite/" target="_blank" style="color: #3b5998; text-decoration: none; font-weight: bold; style="font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;>وان کلوپ</a> دعوت کنید.<br /><br />
+از امکانات وان کلوپ برای آنها تعریف کرده و به آنها نشان دهید که چرا باید از وان کلوپ استفاده کنند.<br />
+<a href="http://site-name.com/invite/" target="_blank" style="color: #3b5998; text-decoration: none; font-weight: bold; style="font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;>دعوت کنید.</a>
+		</td>
+		<td width="20%">
+<a href="http://site-name.com/invite/" target="_blank"><img src="http://up.palringo.eu/uploads/1371955810911.gif" alt="" align="middle" /></a>
+		</td>
+	</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="10" bgcolor="#FFFFFF">
+	<tr align="right" valign="bottom" bgcolor="#FFFFFF">
+    	<td width="100%">
+		<hr align="center" width="90%" color="#333E46" /><br />
+آیا سوالی دارید؟ لطفا به صفحه <a href="http://site-name.com/contact/" target="_blank" style="color: #3b5998; text-decoration: none; font-weight: bold; style="font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;>تماس با ما</a> مراجعه کنید.<br />
+برای تنظیمات پروفایل خود لطفاً به <a href="http://site-name.com/user/profile/" target="_blank" style="color: #3b5998; text-decoration: none; font-weight: bold; style="font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;>تنظیمات پروفایل</a> مراجعه کنید.<br /><br />با تقدیم احترام:<br /><b>{param var='core.site_title'}</b>
+		<hr align="center" width="90%" color="#333E46" />
+		</td>
+	</tr>
+</table>
+<table cellspacing="10">
+	<tr>
+		<td width="760" style="font-size: 12px;" valign="top" align="right">
+<font color="#000033" size="1" face="Tahoma, Geneva, sans-serif">این ایمیل برای این به شما ارسال میشود که شما یا یکی از دوستان شما این ایمیل را در سایت ما ثبت کرده است. <br />
+شما در هر زمان می توانید با مراجعه به <a href="http://site-name.com/user/privacy/"> تنظیمات حریم شخصی</a> نحوه دریافت یا حذف ایمیل ها را تنظیم کنید.<br /><br />
+<!--==========================================================
+Note: You're allowed to change the Copyright with your name ;)
+===========================================================-->
+<center><b>Copyright &copy; oneclub 2013 - Designed and Coded By amir christ - All rights reserved</b></center></font>
+	</tr>
+</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
+{else}
+{if $bMessageHeader}
+{if isset($sName)}
+{phrase var='core.hello_name' name=$sName}
+{else}
+{phrase var='core.hello'}
+{/if},
+{/if}
+{$sMessage}
+{$sEmailSig}
+ 
+{/if}
